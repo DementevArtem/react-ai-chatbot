@@ -1,0 +1,198 @@
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 260px;
+    height: 100%;
+    padding: 16px 12px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+}
+
+.BrandRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+.CloseButton {
+    display: none;
+}
+
+.Brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0 4px;
+}
+
+.Logo {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.Title {
+    margin: 0;
+    color: var(--navy);
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.NewChat {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 12px;
+    background: var(--button-bg);
+    color: var(--button-fg);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.NewChat:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.Heading {
+    margin: 0;
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.List {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    flex: 1;
+    min-height: 0;
+}
+
+.Themes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.ThemeRow {
+    display: flex;
+    gap: 8px;
+    padding: 0 4px;
+}
+
+.ThemeSwatch {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--surface);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--border);
+    cursor: pointer;
+}
+
+.ThemeSwatch[data-active="true"] {
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+.Item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 12px;
+}
+
+.Item[data-active="true"] {
+    background: var(--blue-soft);
+}
+
+.ChatButton {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--navy);
+    font: inherit;
+    font-size: 14px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.ChatButton:disabled {
+    cursor: not-allowed;
+}
+
+.DeleteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    opacity: 0;
+}
+
+.Item:hover .DeleteButton,
+.Item[data-active="true"] .DeleteButton {
+    opacity: 1;
+}
+
+.DeleteButton:hover {
+    color: var(--navy);
+    background: var(--blue-mid);
+}
+
+.DeleteButton:disabled {
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+    .Sidebar {
+        width: min(280px, 86vw);
+        height: 100%;
+    }
+
+    .CloseButton {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background: transparent;
+        color: var(--navy);
+        cursor: pointer;
+    }
+
+    .DeleteButton {
+        opacity: 1;
+    }
+}
